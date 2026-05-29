@@ -13,6 +13,7 @@ import { RuleManager } from './components/RuleManager';
 import { LeadManager } from './components/LeadManager';
 import { LeadKanban } from './components/LeadKanban';
 import { PublicFormView } from './components/PublicFormView';
+import { EtiquetasView } from './components/EtiquetasView';
 
 function AppContent() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('dashboard');
@@ -67,6 +68,7 @@ function AppContent() {
                 {activeTab === 'leads' && '👥 Feed de Contatos e Leads'}
                 {activeTab === 'kanban' && '📋 Funil de Atendimento Comercial'}
                 {activeTab === 'simulator' && '⚡ Simulador de Respostas do Lead'}
+                {activeTab === 'etiquetas' && '🏷️ Etiquetas de Envio e Checklist'}
               </h2>
             </div>
           </div>
@@ -96,6 +98,7 @@ function AppContent() {
             {activeTab === 'leads' && <LeadManager />}
             {activeTab === 'kanban' && <LeadKanban />}
             {activeTab === 'simulator' && <PublicFormView initialFormId={selectedFormForTest} />}
+            {activeTab === 'etiquetas' && <EtiquetasView />}
           </div>
         </main>
 

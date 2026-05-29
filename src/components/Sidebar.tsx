@@ -12,10 +12,11 @@ import {
   Trello,
   Eye,
   RefreshCw,
+  Tag,
 } from 'lucide-react';
 import { useDb } from '../context/DbContext';
 
-export type ActiveTab = 'dashboard' | 'forms' | 'rules' | 'leads' | 'kanban' | 'simulator';
+export type ActiveTab = 'dashboard' | 'forms' | 'rules' | 'leads' | 'kanban' | 'simulator' | 'etiquetas';
 
 interface SidebarProps {
   activeTab: ActiveTab;
@@ -38,7 +39,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
     { id: 'rules', label: 'Regras Condicionais', icon: GitFork, badge: null },
     { id: 'leads', label: 'Gestão de Leads', icon: Users, badge: leads.length },
     { id: 'kanban', label: 'Kanban Comercial', icon: Trello, badge: leads.filter(l => l.status !== 'Comprou' && l.status !== 'Perdido').length },
-    { id: 'simulator', label: 'Simulador Público', icon: Eye, badge: 'Testar' }
+    { id: 'simulator', label: 'Simulador Público', icon: Eye, badge: 'Testar' },
+    { id: 'etiquetas', label: 'Etiquetas de Envio', icon: Tag, badge: null }
   ] as const;
 
   const handleNav = (tabId: ActiveTab) => {

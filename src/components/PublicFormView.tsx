@@ -326,7 +326,7 @@ export const PublicFormView: React.FC<PublicFormViewProps> = ({ initialFormId })
                               <input
                                 id={`pub-q-inp-checkbox-single-${currentQuestion.id}`}
                                 type="checkbox"
-                                className="h-5 w-5 rounded text-indigo-600 border-slate-300 pointer-events-auto"
+                                className="h-5 w-5 rounded text-lime-600 border-slate-300 pointer-events-auto"
                                 checked={answers[currentQuestion.id] === 'Aceito'}
                                 onChange={(e) => setAnswers(prev => ({ ...prev, [currentQuestion.id]: e.target.checked ? 'Aceito' : '' }))}
                               />
@@ -454,7 +454,7 @@ export const PublicFormView: React.FC<PublicFormViewProps> = ({ initialFormId })
                       <div>• Lead ID: {lastCreatedLeadId.toUpperCase()}</div>
                       <div>• Status Inicial: Novo</div>
                       {activeTriggeredRules.length > 0 && (
-                        <div className="text-indigo-600 font-bold">• {activeTriggeredRules.length} lógicas foram aplicadas!</div>
+                        <div className="text-lime-600 font-bold">• {activeTriggeredRules.length} lógicas foram aplicadas!</div>
                       )}
                     </div>
                   )}
@@ -476,8 +476,8 @@ export const PublicFormView: React.FC<PublicFormViewProps> = ({ initialFormId })
           {/* RIGHT CONTAINER COL: LIVE BACKGROUND RULES DEBUG PANEL (INFORMATIVE ONLY) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="rounded-2xl border border-slate-150 bg-white p-5 shadow-xs">
-              <div className="flex items-center gap-2 pb-2 mb-3 border-b border-indigo-50">
-                <Sparkles className="h-4.5 w-4.5 text-indigo-600" />
+              <div className="flex items-center gap-2 pb-2 mb-3 border-b border-lime-100">
+                <Sparkles className="h-4.5 w-4.5 text-lime-600" />
                 <h4 className="font-display font-bold text-slate-705 text-xs uppercase tracking-wider">Lógicas Ativas de Captura</h4>
               </div>
 

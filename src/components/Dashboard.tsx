@@ -198,7 +198,7 @@ export const Dashboard: React.FC = () => {
               className={`
                 px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all
                 ${dateFilter === opt.id 
-                  ? 'bg-indigo-600 text-white shadow-sm font-semibold' 
+                  ? 'bg-blue-950 text-lime-400 shadow-sm font-semibold'
                   : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'}
               `}
             >
@@ -214,7 +214,7 @@ export const Dashboard: React.FC = () => {
         <div className="relative overflow-hidden rounded-2xl bg-white p-5 border border-slate-150 shadow-xs hover:shadow-md transition duration-200">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Total de Leads</span>
-            <div className="rounded-xl bg-indigo-50/75 p-2.5 text-indigo-600">
+            <div className="rounded-xl bg-lime-50/75 p-2.5 text-lime-600">
               <Users className="h-5 w-5" />
             </div>
           </div>
@@ -231,7 +231,7 @@ export const Dashboard: React.FC = () => {
         <div className="relative overflow-hidden rounded-2xl bg-white p-5 border border-slate-150 shadow-xs hover:shadow-md transition duration-200">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">Taxa de Captação</span>
-            <div className="rounded-xl bg-indigo-50 p-2.5 text-indigo-600">
+            <div className="rounded-xl bg-lime-50 p-2.5 text-lime-600">
               <TrendingUp className="h-5 w-5" />
             </div>
           </div>
@@ -242,7 +242,7 @@ export const Dashboard: React.FC = () => {
             </div>
             <div className="flex items-center justify-between">
               <span className="text-xs text-slate-500 font-medium">Últimos 7 dias:</span>
-              <span className="font-mono text-sm font-bold text-indigo-600">+{metrics.count7d}</span>
+              <span className="font-mono text-sm font-bold text-lime-600">+{metrics.count7d}</span>
             </div>
           </div>
           <div className="mt-3 border-t border-slate-100 pt-2 text-5xs font-mono text-slate-400 uppercase tracking-widest text-right">
@@ -265,9 +265,9 @@ export const Dashboard: React.FC = () => {
             </div>
             <div className="flex items-center justify-between">
               <span className="text-xs text-slate-500 font-medium">Aguardando atendimento:</span>
-              <span className="inline-flex items-center gap-1.5 font-mono text-sm font-bold text-indigo-600">
+              <span className="inline-flex items-center gap-1.5 font-mono text-sm font-bold text-lime-600">
                 {metrics.pendingCount}
-                <span className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse" />
+                <span className="h-2 w-2 rounded-full bg-lime-400 animate-pulse" />
               </span>
             </div>
           </div>
@@ -277,18 +277,18 @@ export const Dashboard: React.FC = () => {
         </div>
 
         {/* CONVERSION RATIO */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-700 to-indigo-500 p-5 text-white shadow-md shadow-indigo-600/10 hover:shadow-lg transition duration-200">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-950 to-blue-700 p-5 text-white shadow-md shadow-blue-950/10 hover:shadow-lg transition duration-200">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wider text-indigo-100">Conversão de Vendas</span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-lime-100">Conversão de Vendas</span>
             <div className="rounded-xl bg-white/20 p-2.5 text-white">
               <Percent className="h-5 w-5" />
             </div>
           </div>
           <div className="mt-4 flex items-baseline gap-2">
             <span className="text-4xl font-display font-extrabold tracking-tight">{metrics.conversionRate}%</span>
-            <span className="text-xs font-medium text-indigo-100">da base</span>
+            <span className="text-xs font-medium text-lime-100">da base</span>
           </div>
-          <div className="mt-2 text-2xs text-indigo-150 leading-relaxed font-semibold">
+          <div className="mt-2 text-2xs text-lime-200 leading-relaxed font-semibold">
             {metrics.wins} contratos fechados de {metrics.total} leads na amostragem geral.
           </div>
         </div>
@@ -331,7 +331,7 @@ export const Dashboard: React.FC = () => {
                   
                   {/* Dynamic height bar */}
                   <div 
-                    className="w-8 rounded-t-md bg-indigo-600 group-hover:bg-indigo-500 transition-all duration-300 shadow-sm shadow-indigo-600/10 group-hover:shadow-md group-hover:shadow-indigo-500/20"
+                    className="w-8 rounded-t-md bg-lime-500 group-hover:bg-lime-400 transition-all duration-300 shadow-sm shadow-blue-950/10 group-hover:shadow-md group-hover:shadow-lime-400/20"
                     style={{ height: `${percentHeight}%` }}
                   />
                   
@@ -399,7 +399,7 @@ export const Dashboard: React.FC = () => {
           <div className="mt-4 border-t border-slate-100 pt-3">
             <div className="flex items-center justify-between text-3xs font-mono text-slate-400 uppercase tracking-wider">
               <span>Leads Quentes</span>
-              <span className="font-bold text-indigo-605 block">
+              <span className="font-bold text-lime-600 block">
                 {filteredLeads.filter(l => l.temperature === 'Quente' || l.temperature === 'Muito quente').length}
               </span>
             </div>
@@ -431,7 +431,7 @@ export const Dashboard: React.FC = () => {
                       </div>
                       <div className="h-2 w-full bg-slate-50 rounded-full overflow-hidden border border-slate-100">
                         <div 
-                          className="h-full bg-indigo-600 rounded-full transition-all duration-500" 
+                          className="h-full bg-lime-500 rounded-full transition-all duration-500" 
                           style={{ width: `${ratio}%` }}
                         />
                       </div>
@@ -455,7 +455,7 @@ export const Dashboard: React.FC = () => {
               
               // Custom colors matching Kanban columns
               const statusColors: Record<LeadStatus, string> = {
-                'Novo': 'border-l-indigo-500 bg-indigo-50/40 text-indigo-700',
+                'Novo': 'border-l-blue-800 bg-lime-50/40 text-blue-900',
                 'Em atendimento': 'border-l-sky-500 bg-sky-50/40 text-sky-700',
                 'Qualificado': 'border-l-teal-500 bg-teal-50/40 text-teal-700',
                 'Agendado': 'border-l-purple-500 bg-purple-50/40 text-purple-700',

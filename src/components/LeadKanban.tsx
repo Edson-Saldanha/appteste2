@@ -144,7 +144,7 @@ export const LeadKanban: React.FC = () => {
 
           // Columns visual status colors
           const headerBorderColor: Record<LeadStatus, string> = {
-            'Novo': 'border-l-indigo-500',
+            'Novo': 'border-l-blue-800',
             'Em atendimento': 'border-l-sky-500',
             'Qualificado': 'border-l-teal-500',
             'Agendado': 'border-l-purple-500',
@@ -319,7 +319,7 @@ export const LeadKanban: React.FC = () => {
                   id="inp-kb-note-desc"
                   rows={3}
                   placeholder="Descreva detalhes obtidos na chamada ou follow-up comercial..."
-                  className="w-full rounded-xl border border-slate-200 p-2.5 text-xs text-slate-700 focus:outline-none focus:border-indigo-500"
+                  className="w-full rounded-xl border border-slate-200 p-2.5 text-xs text-slate-700 focus:outline-none focus:border-lime-500"
                   value={quickNoteText}
                   onChange={(e) => setQuickNoteText(e.target.value)}
                   required
@@ -337,7 +337,7 @@ export const LeadKanban: React.FC = () => {
                 <button
                   id="btn-kb-note-submit"
                   type="submit"
-                  className="rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 text-xs font-bold transition shadow-md shadow-indigo-600/10"
+                  className="rounded-xl bg-lime-400 hover:bg-lime-300 text-blue-950 px-4 py-2 text-xs font-bold transition shadow-md shadow-blue-950/10"
                 >
                   Salvar Comentário
                 </button>

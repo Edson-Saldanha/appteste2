@@ -193,7 +193,7 @@ export const LeadManager: React.FC = () => {
 
   // Convert raw status to beautiful classes
   const statusColors: Record<LeadStatus, { text: string, bg: string, ring: string }> = {
-    'Novo': { text: 'text-indigo-700 font-bold', bg: 'bg-indigo-50', ring: 'ring-indigo-150' },
+    'Novo': { text: 'text-blue-900 font-bold', bg: 'bg-lime-50', ring: 'ring-lime-200' },
     'Em atendimento': { text: 'text-sky-700 font-bold', bg: 'bg-sky-50', ring: 'ring-sky-150' },
     'Qualificado': { text: 'text-teal-700 font-bold', bg: 'bg-teal-50', ring: 'ring-teal-150' },
     'Agendado': { text: 'text-purple-700 font-bold', bg: 'bg-purple-50', ring: 'ring-purple-150' },
@@ -227,7 +227,7 @@ export const LeadManager: React.FC = () => {
               id="inp-leads-search"
               type="text"
               placeholder="Buscar por nome, telefone ou e-mail..."
-              className="w-full rounded-xl border border-slate-200 pl-10 pr-4 py-2.5 text-xs text-slate-700 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-50"
+              className="w-full rounded-xl border border-slate-200 pl-10 pr-4 py-2.5 text-xs text-slate-700 focus:outline-none focus:border-lime-500 focus:ring-1 focus:ring-lime-50"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -382,7 +382,7 @@ export const LeadManager: React.FC = () => {
                       {/* Name Card */}
                       <td className="px-5 py-3">
                         <div className="flex flex-col">
-                          <span className="font-display font-black text-slate-800 text-sm group-hover/row:text-indigo-600 transition leading-tight">
+                          <span className="font-display font-black text-slate-800 text-sm group-hover/row:text-lime-600 transition leading-tight">
                             {lead.name}
                           </span>
                           <span className="font-mono text-4xs text-slate-400 mt-1 uppercase tracking-widest">
@@ -398,7 +398,7 @@ export const LeadManager: React.FC = () => {
                           <button
                             id={`btn-copy-ph-tbl-${lead.id}`}
                             onClick={(e) => handleCopyPhone(lead.id, lead.phone, e)}
-                            className="p-1 text-slate-400 hover:text-indigo-600 transition"
+                            className="p-1 text-slate-400 hover:text-lime-600 transition"
                             title="Copiar telefone"
                           >
                             {copiedPhoneId === lead.id ? <Check className="h-3 w-3 text-emerald-500" /> : <Copy className="h-3 w-3" />}
@@ -492,7 +492,7 @@ export const LeadManager: React.FC = () => {
             {/* Modal header details */}
             <div className="flex items-center justify-between border-b border-slate-200 px-6 py-5 bg-slate-50">
               <div className="space-y-0.5">
-                <span className="text-4xs font-mono font-bold text-indigo-600 uppercase tracking-widest leading-none">Perfil do Lead Acadêmico/Comercial</span>
+                <span className="text-4xs font-mono font-bold text-lime-600 uppercase tracking-widest leading-none">Perfil do Lead Acadêmico/Comercial</span>
                 <h3 className="font-display text-lg font-black text-slate-800 tracking-tight leading-tight">{activeLead.name}</h3>
                 <p className="text-5xs font-mono text-slate-400 mt-0.5">Criado em {new Date(activeLead.created_at).toLocaleString('pt-BR')}</p>
               </div>
@@ -520,7 +520,7 @@ export const LeadManager: React.FC = () => {
                   <label className="text-4xs font-black uppercase tracking-wider text-slate-400 block mb-1">Mover Status Funil</label>
                   <select
                     id="inp-lead-edit-status"
-                    className="w-full rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-indigo-500 bg-white"
+                    className="w-full rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-lime-500 bg-white"
                     value={activeLead.status}
                     onChange={(e) => updateLeadStatus(activeLead.id, e.target.value as LeadStatus)}
                   >
@@ -539,7 +539,7 @@ export const LeadManager: React.FC = () => {
                   <label className="text-4xs font-black uppercase tracking-wider text-slate-400 block mb-1">Temperatura Lead</label>
                   <select
                     id="inp-lead-edit-temp"
-                    className="w-full rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-750 focus:outline-none focus:border-indigo-500 bg-white"
+                    className="w-full rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-750 focus:outline-none focus:border-lime-500 bg-white"
                     value={activeLead.temperature}
                     onChange={(e) => updateLeadTemperature(activeLead.id, e.target.value as LeadTemperature)}
                   >
@@ -556,7 +556,7 @@ export const LeadManager: React.FC = () => {
                   <div className="flex items-center gap-1.5">
                     <select
                       id="inp-lead-edit-responsible"
-                      className="w-full rounded-lg border border-slate-200 p-2 text-xs font-semibold text-slate-700 focus:outline-none focus:border-indigo-500 bg-white"
+                      className="w-full rounded-lg border border-slate-200 p-2 text-xs font-semibold text-slate-700 focus:outline-none focus:border-lime-500 bg-white"
                       value={activeLead.responsible_user_id || ''}
                       onChange={(e) => assignLeadResponsible(activeLead.id, e.target.value || null)}
                     >
@@ -570,12 +570,12 @@ export const LeadManager: React.FC = () => {
               </div>
 
               {/* AUTOMATIC ADVANCED INTENT SUMMARY BOX */}
-              <div className="rounded-xl border border-indigo-200 bg-indigo-50/30 p-5 relative">
+              <div className="rounded-xl border border-lime-200 bg-lime-50/30 p-5 relative">
                 <div className="absolute top-3.5 right-4 flex items-center gap-1.5">
                   <button
                     id="btn-copy-summary"
                     onClick={() => handleCopySummary(activeLead.summary)}
-                    className="text-4xs text-indigo-700 hover:text-indigo-955 font-bold flex items-center gap-1 bg-white border border-indigo-200 rounded px-2 py-0.5 shadow-2xs hover:shadow-xs transition"
+                    className="text-4xs text-blue-900 hover:text-blue-950 font-bold flex items-center gap-1 bg-white border border-lime-200 rounded px-2 py-0.5 shadow-2xs hover:shadow-xs transition"
                   >
                     {copiedSummary ? <Check className="h-3 w-3 text-emerald-600" /> : <Copy className="h-3 w-3" />}
                     <span>{copiedSummary ? 'Copiado!' : 'Copiar Resumo'}</span>
@@ -583,8 +583,8 @@ export const LeadManager: React.FC = () => {
                 </div>
 
                 <div className="flex gap-2 mb-2">
-                  <Compass className="h-4 w-4 text-indigo-600 inline shrink-0 mt-0.5" />
-                  <span className="text-4xs font-black uppercase tracking-wider text-indigo-805">IA / Resumo Automático Qualificado</span>
+                  <Compass className="h-4 w-4 text-lime-600 inline shrink-0 mt-0.5" />
+                  <span className="text-4xs font-black uppercase tracking-wider text-blue-900">IA / Resumo Automático Qualificado</span>
                 </div>
                 
                 <p className="text-xs text-slate-700 leading-relaxed font-semibold">
@@ -639,7 +639,7 @@ export const LeadManager: React.FC = () => {
               {/* QUESTIONNAIRE ANSWERS MAPPED WITH DETAILED QUESTION HEADERS */}
               <div className="rounded-xl border border-slate-150 p-5 space-y-4 bg-white shadow-2xs">
                 <div className="flex items-center gap-2 pb-3.5 border-b border-slate-100">
-                  <FileText className="h-4.5 w-4.5 text-indigo-500" />
+                  <FileText className="h-4.5 w-4.5 text-blue-800" />
                   <h4 className="font-display font-bold text-slate-750 text-sm">Questionário / Respostas do Lead</h4>
                 </div>
 
@@ -669,7 +669,7 @@ export const LeadManager: React.FC = () => {
               {/* TAGS MANAGER (MUTABLE) */}
               <div className="rounded-xl border border-slate-150 p-5 space-y-3 bg-white shadow-2xs">
                 <div className="flex items-center gap-1.5 pb-2 border-b border-slate-100">
-                  <Tag className="h-4 w-4 text-indigo-500" />
+                  <Tag className="h-4 w-4 text-blue-800" />
                   <h4 className="font-display font-bold text-slate-700 text-xs uppercase tracking-wider">Mapeamento de Tags do Lead</h4>
                 </div>
 
@@ -700,7 +700,7 @@ export const LeadManager: React.FC = () => {
                     id="inp-lead-add-tag-name"
                     type="text"
                     placeholder="Adicionar nova tag (ex: Reunião-1)"
-                    className="flex-1 rounded-lg border border-slate-200 px-2.5 py-1.5 text-xs text-slate-700 focus:outline-none focus:border-indigo-500"
+                    className="flex-1 rounded-lg border border-slate-200 px-2.5 py-1.5 text-xs text-slate-700 focus:outline-none focus:border-lime-500"
                     value={newTagInput}
                     onChange={(e) => setNewTagInput(e.target.value)}
                   />
@@ -717,7 +717,7 @@ export const LeadManager: React.FC = () => {
               {/* OBSERVATIONS INTERNAL NOTES MANAGER */}
               <div className="rounded-xl border border-slate-150 p-5 space-y-4 bg-white shadow-2xs">
                 <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
-                  <MessageSquare className="h-4.5 w-4.5 text-indigo-600" />
+                  <MessageSquare className="h-4.5 w-4.5 text-lime-600" />
                   <h4 className="font-display font-bold text-slate-700 text-xs uppercase tracking-wider">Anotações / Observações Internas</h4>
                 </div>
 
@@ -726,7 +726,7 @@ export const LeadManager: React.FC = () => {
                     id="inp-lead-note-text"
                     rows={2}
                     placeholder="Escreva um comentário ou notas de follow-up sobre o contato..."
-                    className="w-full rounded-xl border border-slate-200 p-2.5 text-xs text-slate-700 focus:outline-none focus:border-indigo-500 shadow-3xs"
+                    className="w-full rounded-xl border border-slate-200 p-2.5 text-xs text-slate-700 focus:outline-none focus:border-lime-500 shadow-3xs"
                     value={newNoteText}
                     onChange={(e) => setNewNoteText(e.target.value)}
                   />

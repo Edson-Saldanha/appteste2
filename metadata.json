@@ -1,0 +1,6 @@
+{
+  "name": "Gestão de Leads e Formulários Inteligentes",
+  "description": "Plataforma completa para criação de formulários inteligentes com lógica condicional, captação de leads, métricas e pipeline Kanban comercial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

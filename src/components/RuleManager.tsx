@@ -143,7 +143,7 @@ export const RuleManager: React.FC = () => {
         <div className="lg:col-span-5 space-y-6">
           <div className="rounded-2xl border border-slate-150 bg-white p-5 shadow-xs">
             <div className="flex items-center gap-2 pb-3 mb-4 border-b border-slate-100">
-              <Settings2 className="h-4.5 w-4.5 text-indigo-600" />
+              <Settings2 className="h-4.5 w-4.5 text-lime-600" />
               <h3 className="font-display font-bold text-slate-700 text-sm">Configurador de Regras</h3>
             </div>
 
@@ -153,7 +153,7 @@ export const RuleManager: React.FC = () => {
                 <label className="text-4xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Selecionar Formulário</label>
                 <select
                   id="select-rule-form"
-                  className="w-full rounded-xl border border-slate-200 p-2.5 text-xs font-semibold text-slate-700 bg-slate-50 focus:outline-none focus:border-indigo-500"
+                  className="w-full rounded-xl border border-slate-200 p-2.5 text-xs font-semibold text-slate-700 bg-slate-50 focus:outline-none focus:border-lime-500"
                   value={formIdFilter}
                   onChange={(e) => {
                     setFormIdFilter(e.target.value);
@@ -168,8 +168,8 @@ export const RuleManager: React.FC = () => {
 
               {selectedForm ? (
                 <>
-                  <div className="bg-indigo-50/40 rounded-xl p-3 border border-indigo-100 text-3xs text-indigo-850 flex gap-2">
-                    <AlertCircle className="h-4 w-4 text-indigo-600 shrink-0" />
+                  <div className="bg-lime-50/40 rounded-xl p-3 border border-lime-100 text-3xs text-blue-900 flex gap-2">
+                    <AlertCircle className="h-4 w-4 text-lime-600 shrink-0" />
                     <p className="leading-relaxed">
                       Configure comportamentos com base nas respostas dadas pelos contatos. As tags, status e temperaturas serão definidos de acordo com as escolhas de checkout.
                     </p>
@@ -180,7 +180,7 @@ export const RuleManager: React.FC = () => {
                     <label className="text-4xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Se a Pergunta...</label>
                     <select
                       id="inp-rule-source-q"
-                      className="w-full rounded-xl border border-slate-200 p-2.5 text-xs text-slate-700 focus:outline-none focus:border-indigo-500 bg-white"
+                      className="w-full rounded-xl border border-slate-200 p-2.5 text-xs text-slate-700 focus:outline-none focus:border-lime-500 bg-white"
                       value={sourceQuestionId}
                       onChange={(e) => setSourceQuestionId(e.target.value)}
                     >
@@ -199,7 +199,7 @@ export const RuleManager: React.FC = () => {
                     {sourceOptions.length > 0 ? (
                       <select
                         id="inp-rule-cond-val"
-                        className="w-full rounded-xl border border-slate-200 p-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:border-indigo-500 bg-white"
+                        className="w-full rounded-xl border border-slate-200 p-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:border-lime-500 bg-white"
                         value={conditionValue}
                         onChange={(e) => setConditionValue(e.target.value)}
                       >
@@ -212,7 +212,7 @@ export const RuleManager: React.FC = () => {
                         id="inp-rule-cond-val-text"
                         type="text"
                         placeholder="Ex: Sim"
-                        className="w-full rounded-xl border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-indigo-500"
+                        className="w-full rounded-xl border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-lime-500"
                         value={conditionValue}
                         onChange={(e) => setConditionValue(e.target.value)}
                       />
@@ -224,7 +224,7 @@ export const RuleManager: React.FC = () => {
                     <label className="text-4xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Ação Comercial</label>
                     <select
                       id="inp-rule-action"
-                      className="w-full rounded-xl border border-slate-200 p-2.5 text-xs text-slate-700 focus:outline-none focus:border-indigo-500 bg-white"
+                      className="w-full rounded-xl border border-slate-200 p-2.5 text-xs text-slate-700 focus:outline-none focus:border-lime-500 bg-white"
                       value={actionType}
                       onChange={(e) => setActionType(e.target.value as RuleActionType)}
                     >
@@ -241,7 +241,7 @@ export const RuleManager: React.FC = () => {
                         <label className="text-4xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Pular para Pergunta</label>
                         <select
                           id="inp-rule-target-q"
-                          className="w-full rounded-lg border border-slate-200 p-2 text-xs text-slate-700 focus:outline-none focus:border-indigo-500 bg-white"
+                          className="w-full rounded-lg border border-slate-200 p-2 text-xs text-slate-700 focus:outline-none focus:border-lime-500 bg-white"
                           value={targetQuestionId}
                           onChange={(e) => setTargetQuestionId(e.target.value)}
                           required
@@ -261,14 +261,14 @@ export const RuleManager: React.FC = () => {
                       <div>
                         <label className="text-4xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Nome da Tag</label>
                         <div className="flex gap-2">
-                          <div className="flex items-center justify-center p-2 rounded-lg bg-indigo-50 text-indigo-600 border border-indigo-100">
+                          <div className="flex items-center justify-center p-2 rounded-lg bg-lime-50 text-lime-600 border border-lime-100">
                             <Tag className="h-4.5 w-4.5" />
                           </div>
                           <input
                             id="inp-rule-tag"
                             type="text"
                             placeholder="Ex: Gestão, Iniciante, Mentoria"
-                            className="flex-1 rounded-lg border border-slate-200 px-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-indigo-500"
+                            className="flex-1 rounded-lg border border-slate-200 px-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-lime-500"
                             value={tagToAdd}
                             onChange={(e) => setTagToAdd(e.target.value)}
                             required
@@ -286,7 +286,7 @@ export const RuleManager: React.FC = () => {
                           </div>
                           <select
                             id="inp-rule-temp"
-                            className="flex-1 rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-indigo-500 bg-white"
+                            className="flex-1 rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-lime-500 bg-white"
                             value={temperatureToSet}
                             onChange={(e) => setTemperatureToSet(e.target.value as LeadTemperature)}
                           >
@@ -304,7 +304,7 @@ export const RuleManager: React.FC = () => {
                         <label className="text-4xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Novo Status do Funil de Atendimento</label>
                         <select
                           id="inp-rule-status"
-                          className="w-full rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-indigo-500 bg-white"
+                          className="w-full rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-lime-500 bg-white"
                           value={statusToSet}
                           onChange={(e) => setStatusToSet(e.target.value as LeadStatus)}
                         >
@@ -320,7 +320,7 @@ export const RuleManager: React.FC = () => {
                   <button
                     id="btn-save-rule"
                     type="submit"
-                    className="flex w-full justify-center items-center gap-2 rounded-xl bg-indigo-600 p-2.5 text-xs font-bold text-white shadow-md shadow-indigo-600/10 hover:bg-indigo-500 transition duration-150 cursor-pointer"
+                    className="flex w-full justify-center items-center gap-2 rounded-xl bg-lime-400 p-2.5 text-xs font-bold text-blue-950 shadow-md hover:bg-lime-300 transition duration-150 cursor-pointer"
                   >
                     <Plus className="h-4 w-4" />
                     <span>Adicionar Regra</span>
@@ -338,7 +338,7 @@ export const RuleManager: React.FC = () => {
           <div className="rounded-2xl border border-slate-150 bg-white p-5 shadow-xs">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
               <div className="flex items-center gap-2">
-                <GitFork className="h-4.5 w-4.5 text-indigo-600" />
+                <GitFork className="h-4.5 w-4.5 text-lime-600" />
                 <h3 className="font-display font-bold text-slate-750 text-sm">Fluxograma de Regras Ativas</h3>
               </div>
               
@@ -370,7 +370,7 @@ export const RuleManager: React.FC = () => {
                             {getQuestionText(rule.source_question_id)}
                           </span>
                           <span className="font-semibold text-slate-500">for igual a</span>
-                          <span className="font-bold text-indigo-600 bg-indigo-50 border border-indigo-100 rounded-md px-2 py-0.5">
+                          <span className="font-bold text-lime-600 bg-lime-50 border border-lime-100 rounded-md px-2 py-0.5">
                             {rule.condition_value}
                           </span>
                         </div>
@@ -390,12 +390,12 @@ export const RuleManager: React.FC = () => {
                           <div className="flex items-center gap-2 text-xs">
                             {rule.action_type === 'adicionar_tag' && (
                               <>
-                                <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-indigo-50 text-indigo-600 border border-indigo-150 shrink-0">
+                                <span className="inline-flex h-6 w-6 items-center justify-center rounded-md bg-lime-50 text-lime-600 border border-lime-200 shrink-0">
                                   <Tag className="h-3.5 w-3.5" />
                                 </span>
                                 <div>
                                   <p className="text-slate-400 text-3xs font-semibold leading-none">Ação comercial</p>
-                                  <p className="font-bold text-slate-750 mt-0.5">Adicionar tag <span className="text-indigo-600">"{rule.tag_to_add}"</span> ao Lead</p>
+                                  <p className="font-bold text-slate-750 mt-0.5">Adicionar tag <span className="text-lime-600">"{rule.tag_to_add}"</span> ao Lead</p>
                                 </div>
                               </>
                             )}

@@ -65,8 +65,8 @@ export const INITIAL_FORMS: DbForm[] = [
     description: 'Diagnóstico geral para e-commerce e tráfego pago.',
     status: 'rascunho',
     logo_url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=256&auto=format&fit=crop',
-    primary_color: '#4f46e5', // indigo
-    secondary_color: '#1e293b',
+    primary_color: '#a3e635', // lime
+    secondary_color: '#172554',
     button_text: 'Falar com Especialista',
     initial_message: 'Conte-nos sobre o seu negócio e descubra se você está qualificado para a nossa Consultoria de Alavancagem.',
     final_message: 'Obrigado! Em breve entraremos em contato.',

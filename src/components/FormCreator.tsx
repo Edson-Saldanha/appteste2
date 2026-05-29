@@ -82,8 +82,8 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
       description: 'Preencha dados para qualificação comercial imediata.',
       status: 'rascunho',
       logo_url: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=256&auto=format&fit=crop',
-      primary_color: '#4f46e5',
-      secondary_color: '#1e293b',
+      primary_color: '#a3e635',
+      secondary_color: '#172554',
       button_text: 'Enviar meus dados',
       initial_message: 'Por favor, responda de forma sincera a este breve questionário.',
       final_message: 'Recebemos as suas respostas com sucesso! Em breve entraremos em contato.',
@@ -178,7 +178,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
         <button
           id="btn-add-form"
           onClick={handleAddNewForm}
-          className="flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-bold text-white shadow-md shadow-indigo-600/10 hover:bg-indigo-500 transition duration-150 self-start"
+          className="flex items-center gap-2 rounded-xl bg-lime-400 px-4 py-2.5 text-sm font-bold text-blue-950 shadow-md hover:bg-lime-300 transition duration-150 self-start"
         >
           <FolderPlus className="h-4.5 w-4.5" />
           <span>Novo Formulário</span>
@@ -194,7 +194,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
             {/* SELECTOR & BASIC DETAILS CARD */}
             <div className="rounded-2xl border border-slate-150 bg-white p-5 shadow-xs">
               <div className="flex items-center gap-2 pb-3 mb-4 border-b border-slate-100">
-                <FileCode className="h-4.5 w-4.5 text-indigo-600" />
+                <FileCode className="h-4.5 w-4.5 text-lime-600" />
                 <h3 className="font-display font-bold text-slate-700">Formulário Ativo</h3>
               </div>
               
@@ -203,7 +203,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                   <label className="text-4xs font-bold uppercase tracking-wider text-slate-400 block mb-1.5">Selecionar Formulário</label>
                   <select
                     id="select-active-form"
-                    className="w-full rounded-xl border border-slate-200 p-2.5 text-xs font-semibold text-slate-700 bg-slate-50 shadow-xs focus:outline-none focus:border-indigo-500"
+                    className="w-full rounded-xl border border-slate-200 p-2.5 text-xs font-semibold text-slate-700 bg-slate-50 shadow-xs focus:outline-none focus:border-lime-500"
                     value={selectedFormId}
                     onChange={(e) => {
                       setSelectedFormId(e.target.value);
@@ -250,8 +250,8 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
 
             {/* FORM META CONFIGURATION CARD */}
             <div className="rounded-2xl border border-slate-150 bg-white p-5 shadow-xs space-y-4">
-              <div className="flex items-center gap-2 pb-3 border-b border-indigo-50">
-                <Settings className="h-4.5 w-4.5 text-indigo-500" />
+              <div className="flex items-center gap-2 pb-3 border-b border-lime-100">
+                <Settings className="h-4.5 w-4.5 text-blue-800" />
                 <h3 className="font-display font-bold text-slate-700">Configurações Gerais</h3>
               </div>
 
@@ -261,7 +261,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                   <input
                     id="inp-form-name"
                     type="text"
-                    className="w-full rounded-xl border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-indigo-500 shadow-xs"
+                    className="w-full rounded-xl border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-lime-500 shadow-xs"
                     value={currentForm.name}
                     onChange={(e) => updateForm(currentForm.id, { name: e.target.value })}
                   />
@@ -272,7 +272,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                   <textarea
                     id="inp-form-desc"
                     rows={2}
-                    className="w-full rounded-xl border border-slate-200 p-2 text-xs text-slate-600 focus:outline-none focus:border-indigo-500 shadow-xs"
+                    className="w-full rounded-xl border border-slate-200 p-2 text-xs text-slate-600 focus:outline-none focus:border-lime-500 shadow-xs"
                     value={currentForm.description}
                     onChange={(e) => updateForm(currentForm.id, { description: e.target.value })}
                   />
@@ -283,7 +283,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                     <label className="text-4xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Status</label>
                     <select
                       id="inp-form-status"
-                      className="w-full rounded-xl border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-indigo-500 bg-white"
+                      className="w-full rounded-xl border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-lime-500 bg-white"
                       value={currentForm.status}
                       onChange={(e) => updateForm(currentForm.id, { status: e.target.value as FormStatus })}
                     >
@@ -298,7 +298,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                     <input
                       id="inp-form-slug"
                       type="text"
-                      className="w-full rounded-xl border border-slate-200 p-2 text-xs font-mono font-bold text-slate-700 focus:outline-none focus:border-indigo-500 shadow-xs"
+                      className="w-full rounded-xl border border-slate-200 p-2 text-xs font-mono font-bold text-slate-700 focus:outline-none focus:border-lime-500 shadow-xs"
                       value={currentForm.public_slug}
                       onChange={(e) => updateForm(currentForm.id, { public_slug: e.target.value.replace(/\s+/g, '-') })}
                     />
@@ -314,7 +314,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                     <button
                       id="btn-copy-link"
                       onClick={() => handleCopyLink(currentForm.public_slug)}
-                      className="text-4xs text-indigo-600 hover:text-indigo-700 font-bold flex items-center gap-1 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs hover:shadow-xs"
+                      className="text-4xs text-lime-600 hover:text-blue-900 font-bold flex items-center gap-1 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs hover:shadow-xs"
                     >
                       {copiedLink ? <Check className="h-3 w-3 text-emerald-500" /> : <Copy className="h-3 w-3" />}
                       <span>{copiedLink ? 'Copiado!' : 'Copiar'}</span>
@@ -325,7 +325,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                 {/* BRAND STYLING INTEGRATION */}
                 <div className="border-t border-slate-100 pt-3 space-y-3">
                   <div className="flex items-center gap-1 px-1">
-                    <Palette className="h-3.5 w-3.5 text-indigo-500" />
+                    <Palette className="h-3.5 w-3.5 text-blue-800" />
                     <span className="text-3xs font-black uppercase tracking-wider text-slate-500">Design & Cores</span>
                   </div>
 
@@ -364,7 +364,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                     <input
                       id="inp-form-logo"
                       type="text"
-                      className="w-full rounded-xl border border-slate-200 p-2 text-xs text-slate-600 focus:outline-none focus:border-indigo-500 shadow-xs"
+                      className="w-full rounded-xl border border-slate-200 p-2 text-xs text-slate-600 focus:outline-none focus:border-lime-500 shadow-xs"
                       value={currentForm.logo_url}
                       onChange={(e) => updateForm(currentForm.id, { logo_url: e.target.value })}
                     />
@@ -375,7 +375,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                     <input
                       id="inp-form-btn-text"
                       type="text"
-                      className="w-full rounded-xl border border-slate-200 p-2 text-xs text-slate-700 font-bold focus:outline-none focus:border-indigo-500 shadow-xs"
+                      className="w-full rounded-xl border border-slate-200 p-2 text-xs text-slate-700 font-bold focus:outline-none focus:border-lime-500 shadow-xs"
                       value={currentForm.button_text}
                       onChange={(e) => updateForm(currentForm.id, { button_text: e.target.value })}
                     />
@@ -389,7 +389,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                     <textarea
                       id="inp-form-initial-msg"
                       rows={2}
-                      className="w-full rounded-xl border border-slate-200 p-2 text-xs text-slate-650 focus:outline-none focus:border-indigo-500 shadow-xs"
+                      className="w-full rounded-xl border border-slate-200 p-2 text-xs text-slate-650 focus:outline-none focus:border-lime-500 shadow-xs"
                       value={currentForm.initial_message}
                       onChange={(e) => updateForm(currentForm.id, { initial_message: e.target.value })}
                     />
@@ -400,7 +400,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                     <textarea
                       id="inp-form-final-msg"
                       rows={2}
-                      className="w-full rounded-xl border border-slate-200 p-2 text-xs text-slate-650 focus:outline-none focus:border-indigo-500 shadow-xs"
+                      className="w-full rounded-xl border border-slate-200 p-2 text-xs text-slate-650 focus:outline-none focus:border-lime-500 shadow-xs"
                       value={currentForm.final_message}
                       onChange={(e) => updateForm(currentForm.id, { final_message: e.target.value })}
                     />
@@ -416,7 +416,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
             <div className="rounded-2xl border border-slate-150 bg-white p-5 shadow-xs">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
                 <div className="flex items-center gap-2">
-                  <Layout className="h-4.5 w-4.5 text-indigo-600" />
+                  <Layout className="h-4.5 w-4.5 text-lime-600" />
                   <h3 className="font-display font-bold text-slate-700">Estruturação de Perguntas</h3>
                 </div>
 
@@ -433,7 +433,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                   <button
                     id="btn-add-initial-q"
                     onClick={handleAddQuestionToForm}
-                    className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-indigo-600 px-3 py-1.5 text-xs font-bold text-white shadow hover:bg-indigo-500 transition"
+                    className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-lime-400 px-3 py-1.5 text-xs font-bold text-blue-950 shadow hover:bg-lime-300 transition"
                   >
                     <Plus className="h-3.5 w-3.5" />
                     <span>Adicionar Primeira</span>
@@ -451,7 +451,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                         className={`
                           rounded-xl border transition-all duration-200 p-4 relative bg-white
                           ${isExpanded 
-                            ? 'border-indigo-500 shadow-md ring-1 ring-indigo-50/50 font-semibold' 
+                            ? 'border-lime-500 shadow-md ring-1 ring-lime-50/50 font-semibold' 
                             : 'border-slate-200 hover:border-slate-350 shadow-2xs'}
                         `}
                       >
@@ -534,7 +534,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                               <input
                                 id={`inp-q-text-${q.id}`}
                                 type="text"
-                                className="w-full rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-800 focus:outline-none focus:border-indigo-500"
+                                className="w-full rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-800 focus:outline-none focus:border-lime-500"
                                 value={q.question_text}
                                 onChange={(e) => updateQuestion(q.id, { question_text: e.target.value })}
                               />
@@ -546,7 +546,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                               <input
                                 id={`inp-q-desc-${q.id}`}
                                 type="text"
-                                className="w-full rounded-lg border border-slate-200 p-2 text-xs text-slate-500 focus:outline-none focus:border-indigo-500"
+                                className="w-full rounded-lg border border-slate-200 p-2 text-xs text-slate-500 focus:outline-none focus:border-lime-500"
                                 value={q.question_description}
                                 onChange={(e) => updateQuestion(q.id, { question_description: e.target.value })}
                               />
@@ -558,7 +558,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                                 <label className="text-4xs font-bold uppercase tracking-wider text-slate-400 block mb-1">Tipo de Entrada</label>
                                 <select
                                   id={`inp-q-type-${q.id}`}
-                                  className="w-full rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-indigo-500 bg-white"
+                                  className="w-full rounded-lg border border-slate-200 p-2 text-xs font-bold text-slate-700 focus:outline-none focus:border-lime-500 bg-white"
                                   value={q.field_type}
                                   onChange={(e) => {
                                     updateQuestion(q.id, { field_type: e.target.value as QuestionFieldType });
@@ -581,7 +581,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                                   <input
                                     id={`inp-q-req-${q.id}`}
                                     type="checkbox"
-                                    className="h-4 w-4 rounded text-indigo-600 border-slate-200 focus:ring-indigo-500"
+                                    className="h-4 w-4 rounded text-lime-600 border-slate-200 focus:ring-lime-500"
                                     checked={q.is_required}
                                     onChange={(e) => updateQuestion(q.id, { is_required: e.target.checked })}
                                   />
@@ -604,7 +604,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                                         order_index: questionOptionsList.length
                                       });
                                     }}
-                                    className="text-4xs text-indigo-600 hover:text-indigo-700 font-bold flex items-center gap-1.5"
+                                    className="text-4xs text-lime-600 hover:text-blue-900 font-bold flex items-center gap-1.5"
                                   >
                                     <Plus className="h-3 w-3" />
                                     <span>Adicionar Opção</span>
@@ -620,7 +620,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                                         <input
                                           id={`inp-opt-text-${opt.id}`}
                                           type="text"
-                                          className="flex-1 rounded border border-slate-200 px-2 py-1 text-xs text-slate-700 focus:outline-none focus:border-indigo-500"
+                                          className="flex-1 rounded border border-slate-200 px-2 py-1 text-xs text-slate-700 focus:outline-none focus:border-lime-500"
                                           value={opt.option_text}
                                           onChange={(e) => updateQuestionOption(opt.id, e.target.value)}
                                         />
@@ -652,9 +652,9 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
                 <button
                   id="btn-add-question-bottom"
                   onClick={handleAddQuestionToForm}
-                  className="mt-4 flex w-full justify-center items-center gap-1.5 rounded-xl border border-dashed border-slate-300 p-3 text-xs font-bold text-slate-650 hover:text-indigo-600 hover:bg-indigo-50/20 transition-all cursor-pointer"
+                  className="mt-4 flex w-full justify-center items-center gap-1.5 rounded-xl border border-dashed border-slate-300 p-3 text-xs font-bold text-slate-650 hover:text-lime-600 hover:bg-lime-50/20 transition-all cursor-pointer"
                 >
-                  <Plus className="h-4 w-4 animate-pulse text-indigo-600" />
+                  <Plus className="h-4 w-4 animate-pulse text-lime-600" />
                   <span>Adicionar Pergunta</span>
                 </button>
               )}
@@ -666,7 +666,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
           <div className="lg:col-span-3 space-y-6">
             <div className="rounded-2xl border border-slate-150 bg-white p-4 shadow-xs flex flex-col items-center">
               <div className="flex items-center gap-1.5 pb-2 mb-3 border-b border-slate-100 w-full">
-                <Smartphone className="h-4 w-4 text-indigo-600" />
+                <Smartphone className="h-4 w-4 text-lime-600" />
                 <h3 className="font-display font-black text-slate-700 text-xs uppercase tracking-wider">Device Real-Time Mock</h3>
               </div>
 
@@ -759,7 +759,7 @@ export const FormCreator: React.FC<FormCreatorProps> = ({ onTestForm }) => {
         <div className="bg-white border rounded-2xl p-10 text-center">
           <FolderLock className="h-10 w-10 text-slate-400 mx-auto" />
           <p className="text-slate-600 font-bold mt-2">Nenhum formulário encontrado no banco de simulação.</p>
-          <button onClick={handleAddNewForm} className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded cursor-pointer">Começar</button>
+          <button onClick={handleAddNewForm} className="mt-4 px-4 py-2 bg-lime-400 text-blue-950 font-bold rounded cursor-pointer">Começar</button>
         </div>
       )}
     </div>

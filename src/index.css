@@ -18,18 +18,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(156, 163, 175, 0.4);
+  background: rgba(163, 230, 53, 0.3);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(156, 163, 175, 0.6);
+  background: rgba(163, 230, 53, 0.5);
 }
 
 /* Clean UI styling enhancements */
 body {
   font-family: var(--font-sans);
-  background-color: #f8fafc;
+  background-color: #f0f4f8;
   color: #0f172a;
   overflow-x: hidden;
 }
